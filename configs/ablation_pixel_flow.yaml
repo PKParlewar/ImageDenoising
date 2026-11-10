@@ -1,0 +1,20 @@
+# Ablation 4: Symmetric Transport vs Phase-Domain Asymmetric Transport
+model:
+  in_channels: 1
+  hidden_dim: 48
+  n_scales: 2
+  warping_window: 8
+  physics_mode: "srgb"
+
+ablation:
+  name: "ablation_symmetric_flow"
+  description: "Symmetric flow matching (w_A = w_phi = 1.0) without phase invariance concentration"
+  weight_mag: 1.0
+  weight_phase: 1.0
+
+training:
+  epochs_stage1: 10
+  epochs_stage2: 15
+  lr: 0.003
+  weight_mag: 1.0
+  weight_phase: 1.0

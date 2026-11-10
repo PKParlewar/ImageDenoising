@@ -1,0 +1,21 @@
+# Ablation 1: Static-Radius Masking vs Adaptive Masking
+model:
+  in_channels: 1
+  hidden_dim: 48
+  n_scales: 2
+  warping_window: 8
+  physics_mode: "srgb"
+
+ablation:
+  name: "ablation_fixed_mask"
+  description: "Static mask radius without empirical autocorrelation adaptation"
+  adaptive_masking: false
+  static_radius: 2
+
+training:
+  epochs_stage1: 10
+  epochs_stage2: 15
+  lr: 0.003
+  lambda_mask: 1.0
+  lambda_pc: 0.5
+  lambda_reg: 0.01

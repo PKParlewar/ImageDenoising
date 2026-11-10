@@ -1,0 +1,20 @@
+# Ablation 3: Fixed Canonical Hilbert Scan vs PC-Warped Hilbert Scan
+model:
+  in_channels: 1
+  hidden_dim: 48
+  n_scales: 2
+  warping_window: 0
+  physics_mode: "srgb"
+
+ablation:
+  name: "ablation_fixed_hilbert"
+  description: "Fixed canonical Hilbert traversal (w=0, no PC warping)"
+  warping_window: 0
+
+training:
+  epochs_stage1: 10
+  epochs_stage2: 15
+  lr: 0.003
+  lambda_mask: 1.0
+  lambda_pc: 0.5
+  lambda_reg: 0.01

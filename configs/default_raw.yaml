@@ -1,0 +1,23 @@
+model:
+  in_channels: 4
+  hidden_dim: 48
+  n_scales: 2
+  warping_window: 8
+  physics_mode: "raw"
+  shot_noise_sigma: 0.01
+  read_noise_sigma: 0.005
+
+training:
+  epochs_stage1: 10
+  epochs_stage2: 15
+  lr: 0.003
+  batch_size: 4
+  lambda_mask: 1.0
+  lambda_pc: 0.5
+  lambda_reg: 0.01
+  weight_mag: 1.0
+  weight_phase: 0.05
+
+data:
+  dataset_dir: "data/SIDD"
+  input_mode: "raw"

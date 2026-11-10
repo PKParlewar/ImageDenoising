@@ -1,0 +1,20 @@
+# Ablation 2: BSN Masked-Prediction Loss Only (No Phase Congruency Invariance)
+model:
+  in_channels: 1
+  hidden_dim: 48
+  n_scales: 2
+  warping_window: 8
+  physics_mode: "srgb"
+
+ablation:
+  name: "ablation_bsn_loss"
+  description: "Standard BSN masked-pixel reconstruction without phase-congruency invariance"
+  lambda_pc: 0.0
+
+training:
+  epochs_stage1: 10
+  epochs_stage2: 15
+  lr: 0.003
+  lambda_mask: 1.0
+  lambda_pc: 0.0
+  lambda_reg: 0.01
